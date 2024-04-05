@@ -1,11 +1,32 @@
 import SlideThumbnail from "./SlideThumbnail";
+import thumbnailImage1 from "./assets/thumbnail-1.png"
+import thumbnailImage2 from "./assets/thumbnail-2.png"
+import thumbnailImage3 from "./assets/thumbnail-3.png"
+
+const testSlides = [
+    {
+        id: 0,
+        order: 1,
+        image: thumbnailImage1
+    },
+    {
+        id: 1,
+        order: 2,
+        image: thumbnailImage2
+    },
+    {
+        id: 2,
+        order: 3,
+        image: thumbnailImage3
+    },
+]
 
 export default function Sidebar() {
     return (
         <div className="border-end bg-light p-3 d-flex flex-column">
-            <SlideThumbnail/>
-            <SlideThumbnail/>
-            <SlideThumbnail/>
+            <SlideThumbnail slide={testSlides[0]}/>
+            <SlideThumbnail slide={testSlides[1]}/>
+            <SlideThumbnail slide={testSlides[2]}/>
         </div>
     )
 }

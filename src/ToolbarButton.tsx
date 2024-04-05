@@ -1,15 +1,16 @@
-export default function ToolbarButton() {
 
-    const handleButtonClick = () => {
-        alert("I'm a button!")
-    }
+type ToolbarButtonProps = { 
+    icon: string, 
+    onClick: () => void 
+}
 
+export default function ToolbarButton({ icon, onClick }: ToolbarButtonProps) {
     return (
         <button 
             className="btn btn-outline-secondary me-2" 
-            onClick={handleButtonClick}
+            onClick={onClick}
         >
-            Button
+            <img src={icon} style={{ width: "1rem"}}/>
         </button>
     )
 }
