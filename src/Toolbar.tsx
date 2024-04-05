@@ -1,3 +1,10 @@
+import ToolbarButton from "./ToolbarButton";
+
 export default function Toolbar() {
-    return <div>Toolbar</div>
+    return (
+        <div className="bg-light p-3 border-bottom">
+            <ToolbarButton/>
+            <ToolbarButton/>
+        </div>
+    )
 }

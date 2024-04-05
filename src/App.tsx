@@ -4,11 +4,12 @@ import SlideView from "./SlideView"
 
 export default function App() {
   return (
-    <div>
-      App
+    <div className="d-flex flex-column vh-100">
       <Toolbar/>
-      <Sidebar/>
-      <SlideView/>
+      <div className="d-flex flex-grow-1">
+        <Sidebar/>
+        <SlideView/>
+      </div>
     </div>
   )
 }
