@@ -24,9 +24,7 @@ const testSlides = [
 export default function Sidebar() {
     return (
         <div className="border-end bg-light p-3 d-flex flex-column">
-            <SlideThumbnail slide={testSlides[0]}/>
-            <SlideThumbnail slide={testSlides[1]}/>
-            <SlideThumbnail slide={testSlides[2]}/>
+            { testSlides.map( s => <SlideThumbnail key={s.id} slide={ s }/> ) }
         </div>
     )
 }
