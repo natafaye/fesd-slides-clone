@@ -4,16 +4,12 @@ import colorIcon from "./assets/fill-drip-solid.svg"
 import fontIcon from "./assets/font-solid.svg"
 import plusIcon from "./assets/plus-solid.svg"
 import { useState } from "react";
+import type { Slide } from "./types";
 
 type ToolbarProps = {
     addBlankSlide: () => void
     updateSlideFontColor: (color: string, id?: number) => void
-    selectedSlide?: { 
-        id: number, 
-        order: number, 
-        image: string, 
-        fontColor: string 
-    }
+    selectedSlide?: Slide
 }
 
 export default function Toolbar({ 

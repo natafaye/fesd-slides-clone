@@ -1,12 +1,7 @@
+import type { Slide } from "./types"
 
 type SlideViewProps = {
-    slide?: { 
-        id: number, 
-        order: number, 
-        image: string, 
-        text: string, 
-        fontColor: string 
-    }
+    slide?: Slide
 }
 
 export default function SlideView({ slide }: SlideViewProps) {

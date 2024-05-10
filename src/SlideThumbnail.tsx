@@ -1,6 +1,7 @@
+import type { Slide } from "./types"
 
 type SlideThumbnailProps = {
-    slide: { id: number, order: number, image: string }
+    slide: Slide
     isSelected: boolean
     onSelected: (id: number) => void
     deleteSlide: (id: number) => void

@@ -6,6 +6,7 @@ import thumbnailImage1 from "./assets/thumbnail-1.png"
 import thumbnailImage2 from "./assets/thumbnail-2.png"
 import thumbnailImage3 from "./assets/thumbnail-3.png"
 import blankThumbnail from "./assets/blank-thumbnail.png"
+import type { Slide } from "./types"
 
 const TEST_SLIDES = [
   {
@@ -32,7 +33,7 @@ const TEST_SLIDES = [
 ]
 
 export default function App() {
-  const [slides, setSlides] = useState(TEST_SLIDES)
+  const [slides, setSlides] = useState<Slide[]>(TEST_SLIDES)
   const [selectedSlideId, setSelectedSlideId] = useState(0)
 
   const selectedSlide = slides.find(s => s.id === selectedSlideId)
