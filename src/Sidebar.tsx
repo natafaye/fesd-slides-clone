@@ -5,9 +5,15 @@ type SidebarProps = {
     slides: Array<{ id: number, order: number, image: string }>
     selectedSlideId: number
     setSelectedSlideId: (newValue: number) => void
+    deleteSlide: (id: number) => void
 }
 
-export default function Sidebar({ slides, selectedSlideId, setSelectedSlideId }: SidebarProps) {
+export default function Sidebar({ 
+    slides,
+    selectedSlideId, 
+    setSelectedSlideId, 
+    deleteSlide 
+}: SidebarProps) {
     const [isExpanded, setIsExpanded] = useState(true)
 
     const handleButtonClick = () => {
@@ -28,6 +34,7 @@ export default function Sidebar({ slides, selectedSlideId, setSelectedSlideId }:
                             slide={s} 
                             onSelected={handleSlideClick} 
                             isSelected={s.id === selectedSlideId} 
+                            deleteSlide={deleteSlide}
                         />
                     ))}
                 </div>
