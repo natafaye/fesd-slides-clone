@@ -1,7 +1,7 @@
 import Toolbar from "./Toolbar"
 import Sidebar from "./Sidebar"
 import SlideView from "./SlideView"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import thumbnailImage1 from "./assets/thumbnail-1.png"
 import thumbnailImage2 from "./assets/thumbnail-2.png"
 import thumbnailImage3 from "./assets/thumbnail-3.png"
@@ -35,6 +35,10 @@ const TEST_SLIDES = [
 export default function App() {
   const [slides, setSlides] = useState<Slide[]>(TEST_SLIDES)
   const [selectedSlideId, setSelectedSlideId] = useState(0)
+
+  useEffect(() => {
+    document.title = `Slides (${slides.length})`
+  }, [slides.length])
 
   const selectedSlide = slides.find(s => s.id === selectedSlideId)
 
