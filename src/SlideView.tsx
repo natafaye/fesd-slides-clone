@@ -14,7 +14,9 @@ export default function SlideView({ slide, updateSlide }: SlideViewProps) {
                     className="bg-white m-3 w-75 shadow-sm p-3 border"
                     style={{
                         height: slideHeight + "px",
-                        color: slide?.fontColor
+                        color: slide?.fontColor,
+                        fontFamily: slide?.fontFamily,
+                        fontSize: slide?.fontSize + "px",
                     }}
                 >
                     {slide?.text}

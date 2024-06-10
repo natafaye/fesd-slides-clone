@@ -15,7 +15,9 @@ const TEST_SLIDES = [
     image: thumbnailImage1,
     text: "React Components",
     fontColor: "black",
-    speakerNotes: "Default notes"
+    speakerNotes: "Default notes",
+    fontFamily: "Verdana",
+    fontSize: "14"
   },
   {
     id: 1,
@@ -23,7 +25,9 @@ const TEST_SLIDES = [
     image: thumbnailImage2,
     text: "React Props",
     fontColor: "red",
-    speakerNotes: "Default notes"
+    speakerNotes: "Default notes",
+    fontFamily: "Verdana",
+    fontSize: "14"
   },
   {
     id: 2,
@@ -31,7 +35,9 @@ const TEST_SLIDES = [
     image: thumbnailImage3,
     text: "Passing down props",
     fontColor: "black",
-    speakerNotes: "Default notes"
+    speakerNotes: "Default notes",
+    fontFamily: "Verdana",
+    fontSize: "14"
   },
 ]
 
@@ -52,7 +58,9 @@ export default function App() {
       image: blankThumbnail,
       text: "",
       fontColor: "black",
-    speakerNotes: "Default notes"
+      speakerNotes: "Default notes",
+      fontFamily: "Verdana",
+      fontSize: "14"
     }
 
     setSlides([...slides, blankSlide])
@@ -67,7 +75,7 @@ export default function App() {
       return
     }
 
-    setSlides(slides.map(slide => (
+    setSlides(currentSlides => currentSlides.map(slide => (
       slide.id !== idToUpdate ? slide : {
         ...slide,
         [property]: newValue
@@ -89,9 +97,9 @@ export default function App() {
           selectedSlideId={selectedSlideId}
           setSelectedSlideId={setSelectedSlideId}
         />
-        <SlideView 
+        <SlideView
           slide={selectedSlide}
-          updateSlide={updateSlide} 
+          updateSlide={updateSlide}
         />
       </div>
     </div>
