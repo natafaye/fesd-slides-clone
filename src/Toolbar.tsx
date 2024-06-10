@@ -8,13 +8,13 @@ import type { Slide } from "./types";
 
 type ToolbarProps = {
     addBlankSlide: () => void
-    updateSlideFontColor: (color: string, id?: number) => void
+    updateSlide: (property: string, color: string, id?: number) => void
     selectedSlide?: Slide
 }
 
 export default function Toolbar({ 
     addBlankSlide, 
-    updateSlideFontColor, 
+    updateSlide, 
     selectedSlide 
 }: ToolbarProps) {
     const [isColorModalOpen, setIsColorModalOpen] = useState(false)
@@ -36,15 +36,15 @@ export default function Toolbar({
                     <Stack direction="horizontal" gap={1}>
                         <Button
                             variant={selectedSlide?.fontColor === "red" ? "danger" : "outline-danger"}
-                            onClick={() => updateSlideFontColor("red", selectedSlide?.id)}
+                            onClick={() => updateSlide("fontColor", "red", selectedSlide?.id)}
                         >Red</Button>
                         <Button
                             variant={selectedSlide?.fontColor === "green" ? "success" : "outline-success"}
-                            onClick={() => updateSlideFontColor("green", selectedSlide?.id)}
+                            onClick={() => updateSlide("fontColor", "green", selectedSlide?.id)}
                         >Green</Button>
                         <Button
                             variant={selectedSlide?.fontColor === "black" ? "dark" : "outline-dark"}
-                            onClick={() => updateSlideFontColor("black", selectedSlide?.id)}
+                            onClick={() => updateSlide("fontColor", "black", selectedSlide?.id)}
                         >Black</Button>
                     </Stack>
                 </Modal.Body>

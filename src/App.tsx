@@ -14,21 +14,24 @@ const TEST_SLIDES = [
     order: 1,
     image: thumbnailImage1,
     text: "React Components",
-    fontColor: "black"
+    fontColor: "black",
+    speakerNotes: "Default notes"
   },
   {
     id: 1,
     order: 2,
     image: thumbnailImage2,
     text: "React Props",
-    fontColor: "red"
+    fontColor: "red",
+    speakerNotes: "Default notes"
   },
   {
     id: 2,
     order: 3,
     image: thumbnailImage3,
     text: "Passing down props",
-    fontColor: "black"
+    fontColor: "black",
+    speakerNotes: "Default notes"
   },
 ]
 
@@ -48,7 +51,8 @@ export default function App() {
       order: 4,
       image: blankThumbnail,
       text: "",
-      fontColor: "black"
+      fontColor: "black",
+    speakerNotes: "Default notes"
     }
 
     setSlides([...slides, blankSlide])
@@ -58,7 +62,7 @@ export default function App() {
     setSlides(slides.filter(s => s.id !== idToDelete))
   }
 
-  const updateSlideFontColor = (newColor: string, idToUpdate?: number) => {
+  const updateSlide = (property: string, newValue: string, idToUpdate?: number) => {
     if (idToUpdate === undefined) {
       return
     }
@@ -66,7 +70,7 @@ export default function App() {
     setSlides(slides.map(slide => (
       slide.id !== idToUpdate ? slide : {
         ...slide,
-        fontColor: newColor
+        [property]: newValue
       }
     )))
   }
@@ -76,7 +80,7 @@ export default function App() {
       <Toolbar
         selectedSlide={selectedSlide}
         addBlankSlide={addBlankSlide}
-        updateSlideFontColor={updateSlideFontColor}
+        updateSlide={updateSlide}
       />
       <div className="d-flex flex-grow-1">
         <Sidebar
@@ -85,7 +89,10 @@ export default function App() {
           selectedSlideId={selectedSlideId}
           setSelectedSlideId={setSelectedSlideId}
         />
-        <SlideView slide={selectedSlide} />
+        <SlideView 
+          slide={selectedSlide}
+          updateSlide={updateSlide} 
+        />
       </div>
     </div>
   )
